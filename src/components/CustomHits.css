@@ -1,0 +1,20 @@
+.hits-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.pokemon-detail-container {
+    position: absolute;
+    right: 0;
+    top: 5%;
+    animation: fadeIn 0.5s ease;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .pokemon-detail-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }

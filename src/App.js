@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Pokedex from './pages/pokedex/Pokedex';
+import Navbar from './components/Navbar';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Pokedex />} />
+        <Route path='login' element={<Login/>} />
+        <Route path='signup' element={<Signup/>} />
+      </Routes>
+    </Router>
+    </AuthProvider>
   );
 }
 

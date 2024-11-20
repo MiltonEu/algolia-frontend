@@ -1,0 +1,81 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display';
+  }
+  
+  .navbar-logo {
+    width: 5rem;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links p {
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .logo {
+    width: 60px; 
+    height: 60px;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .menu-item:first-child {
+    margin-right: 20px;
+  }
+
+.pokedex {
+    --content-step-0: "Pケデックス.";
+    --content-step-25: "Poデックス.";
+    --content-step-50: "Pokックス.";
+    --content-step-75: "Pokéクス.";
+    --content-step-100: "Pokédex.";
+  }
+  
+  .battle-mode {
+    --content-step-0: "Bトル Mode.";
+    --content-step-25: "Baトル Mode.";
+    --content-step-50: "Batル Mode.";
+    --content-step-75: "Battル Mode.";
+    --content-step-100: "Battle Mode.";
+  }
+
+@keyframes textReplacement {
+    0% {
+      content: var(--content-step-0);
+    }
+    25% {
+      content: var(--content-step-25);
+    }
+    50% {
+      content: var(--content-step-50);
+    }
+    75% {
+      content: var(--content-step-75);
+    }
+    100% {
+      content: var(--content-step-100);
+    }
+  }
+  
+  .animated-content:before {
+    content: var(--content-step-100);
+    animation: textReplacement 0.8s ease-in;
+  }
